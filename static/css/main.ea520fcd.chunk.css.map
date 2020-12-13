@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/FeedbackOptions/FeedbackOptions.module.css"],"names":[],"mappings":"AAAA,4BACE,cAAe,CACf,iBACF,CACA,6CACE,iBACF","file":"main.ea520fcd.chunk.css","sourcesContent":[".btn {\r\n  cursor: pointer;\r\n  border-radius: 5px;\r\n}\r\n.btn:not(:last-child) {\r\n  margin-right: 20px;\r\n}\r\n"]}
