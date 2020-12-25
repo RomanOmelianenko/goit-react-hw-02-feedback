@@ -1,5 +1,5 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import styles from './FeedbackOptions.module.css';
 
 function FeedbackOptions({ options /*handleGood, handleNeutral, handleBad*/}) {
@@ -33,7 +33,7 @@ function FeedbackOptions({ options /*handleGood, handleNeutral, handleBad*/}) {
 };
 
 FeedbackOptions.propTypes = {
-    options: propTypes.func.isRequired
+    options: PropTypes.func.isRequired
 };
 
 export default FeedbackOptions;
