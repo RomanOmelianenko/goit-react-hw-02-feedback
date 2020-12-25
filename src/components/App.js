@@ -27,23 +27,29 @@ class App extends Component {
         return result;
     };
 
-    handleGood = () => {
-        this.setState((prevState, props) => {
-            return {good: prevState.good + props.step}
-        })
+    handleFeedback = name => {
+        this.setState(prevState => ({
+            [name]: prevState[name] + this.props.step
+        }));
     };
 
-    handleNeutral = () => {
-        this.setState((prevState, props) => {
-            return {neutral: prevState.neutral + props.step}
-        })
-    };
+    // handleGood = () => {
+    //     this.setState((prevState, props) => {
+    //         return {good: prevState.good + props.step}
+    //     })
+    // };
 
-    handleBad = () => {
-        this.setState((prevState, props) => {
-            return {bad: prevState.bad + props.step}
-        })
-    };
+    // handleNeutral = () => {
+    //     this.setState((prevState, props) => {
+    //         return {neutral: prevState.neutral + props.step}
+    //     })
+    // };
+
+    // handleBad = () => {
+    //     this.setState((prevState, props) => {
+    //         return {bad: prevState.bad + props.step}
+    //     })
+    // };
 
     render() {
         const { good } = this.state;
@@ -54,9 +60,10 @@ class App extends Component {
             <div>
                 <Section title="Please leave feedback">
                     <FeedbackOptions
-                        handleGood={this.handleGood}
-                        handleNeutral={this.handleNeutral}
-                        handleBad={this.handleBad}
+                        options={this.handleFeedback}
+                        // handleGood={this.handleGood}
+                        // handleNeutral={this.handleNeutral}
+                        // handleBad={this.handleBad}
                     />
                 </Section>
                 {this.countTotalFeedback() > 0 ? (

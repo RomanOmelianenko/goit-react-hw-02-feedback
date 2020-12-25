@@ -1,29 +1,39 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import styles from './FeedbackOptions.module.css';
 
-function FeedbackOptions({handleGood, handleNeutral, handleBad}) {
+function FeedbackOptions({ options /*handleGood, handleNeutral, handleBad*/}) {
     return (
         <div>
-            <button type="button"
+            <button
+                type="button"
                 className={styles.btn}
-                onClick={handleGood}>
-                Good 
+                name='good'
+                onClick={() => { options('good') }}>
+                Good
             </button>
 
-            <button type="button"
+            <button
+                type="button"
                 className={styles.btn}
-                onClick={handleNeutral}>
-                Neutral 
+                name='neutral'
+                onClick={() => { options('neutral') }}>
+                Neutral
             </button>
 
-            <button type="button"
+            <button
+                type="button"
                 className={styles.btn}
-                onClick={handleBad}>
-                Bad 
+                name='bad'
+                onClick={() => options('bad')}>
+                Bad
             </button>
         </div>
-    )
+    );
+};
 
+FeedbackOptions.propTypes = {
+    options: propTypes.func.isRequired
 };
 
 export default FeedbackOptions;
